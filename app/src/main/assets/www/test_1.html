@@ -1,0 +1,104 @@
+<head>
+    <title>Html5_1</title>
+</head>
+<body>
+
+<div>
+    <a>点击finish页面...</a>
+</div>
+<div>
+    <img src="http://182.92.9.154:8080//uploadFile/productTypeIcon/phoneImg/201611281711063076.jpg" id="img" />
+</div>
+
+<div id="helloweb">
+</div>
+
+<div id="clock" style="font-size: 50px;color: blue;">
+    00:00:00
+</div>
+<div id="time_date" style="font-size: 15px;color: gray;margin-left: 10px;">
+    2000年1月1日
+</div>
+
+<div style="margin-top: 10px;">
+    <input type="button" id="btn_stop" value="停止" style="margin-left: 10px;""/>
+    <input type="button" id="btn_start" value="继续" style="margin-left: 15px;"/>
+</div>
+
+<div style="margin-top: 15px;">
+    <a href="test_2.html " style="text-decoration:none; ">跳转到Html5_2&gt;&gt;</a>
+</div>
+
+<script>
+
+        var btn_stop = null;
+		var btn_start = null;
+		var timer = null;
+		var is_timer_running = false; //标识是否正在运行
+		window.onload = function myalert() {
+			btn_stop = document.getElementById("btn_stop");
+			btn_start = document.getElementById("btn_start");
+			btn_stop.onclick = stop;
+			btn_start.onclick = startTimer;
+			startTimer();
+			startClock();
+		}
+
+		function stop() {
+			if (is_timer_running) {
+				is_timer_running = false;
+				clearInterval(timer);
+
+				androidObj.show_a_toast_by_js("js回调安卓:停止...");
+			}
+		}
+		//启动定时器
+		function startTimer() {
+			if (!is_timer_running) {
+				is_timer_running = true;
+				timer = setInterval(startClock, 1000);
+
+				androidObj.show_a_toast_by_js("js回调安卓:开始...");
+			}
+		}
+		//启动闹钟
+		function startClock() {
+			var date = new Date();
+			var currentTime = addZero(date.getHours()) + ":" + addZero(date.getMinutes()) + ":" + addZero(date.getSeconds());
+			document.getElementById("clock").innerHTML = currentTime;
+
+			var currentDate = date.getFullYear() + "年" + (date.getMonth() + 1)  + "月"+ date.getDate() + "日      星期" + date.getDay();
+			document.getElementById("time_date").innerHTML = currentDate;
+		}
+		//补零
+		function addZero(num) {
+			if (num < 10) {
+				return '0' + num;
+			} else {
+				return '' + num;
+			}
+		}
+
+
+		//给webView调用的
+        function functionInjs(){
+    	    <!--document.getElementById("helloweb").innerHTML="HelloWebView,i'm from js";-->
+    	    alert("Hello,你好!");
+        }
+
+        var aTag = document.getElementsByTagName('a')[0];
+        aTag.addEventListener('click', function(){
+		    androidObj.finishByJs();//调用android方法:finish()
+            return false;
+        }, false);
+
+
+        var bTag = document.getElementsByTagName('img')[0];
+        bTag.addEventListener('click', function(){
+		    androidObj.fun_check_image("http://182.92.9.154:8080//uploadFile/productTypeIcon/phoneImg/201611281711063076.jpg");//调用android本地方法
+            return false;
+        }, false);
+
+</script>
+
+</body>

@@ -1,0 +1,70 @@
+<head>
+    <meta charset="utf-8">
+    <title>Html5_3</title>
+
+    <style type="text/css">
+        table td{
+		    text-align: center;
+		}
+    </style>
+
+    <script>
+		window.onload = function() {
+            var aTag = document.getElementsByTagName('a')[1];
+            aTag.addEventListener('click', function() {
+                androidObj.finishByJs(); //调用android方法:finish()
+                return false;
+            }, false);
+		}
+	</script>
+</head>
+
+<body>
+    <div>
+        <a href="test_2.html" style="text-decoration: none;">&lt&lt返回上页</a>
+        <a style="margin-left: 10px;">点击finish页面...</a>
+    </div>
+    <table width="300" border='1' cellspacing='0' cellpadding='2' bordercolor='#999999'
+           style="margin-top: 15px;">
+
+        <thead>
+            <td>ID</td>
+            <td>姓名</td>
+            <td>年龄</td>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>呵呵</td>
+                <td>20</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>嘿嘿</td>
+                <td>21</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>哈哈</td>
+                <td>26</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>呼呼</td>
+                <td>25</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>嗯嗯</td>
+                <td>29</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+<!--var aTag = document.getElementsByTagName('a')[1];-->
+<!--aTag.addEventListener('click', function() {-->
+<!--androidObj.finishByJs(); //调用android方法:finish()-->
+<!--return false;-->
+<!--}, false);-->

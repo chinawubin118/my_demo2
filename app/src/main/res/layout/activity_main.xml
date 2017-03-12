@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.lotte.mydemo2.ui.main_page.MainActivity">
+
+    <include
+        android:id="@+id/tool_bar_layout"
+        layout="@layout/arad_toolbar" />
+
+    <TextView
+        android:id="@+id/tv_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="Hello World!"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_shortcut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="快捷路径"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_shortcut_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="快捷路径2"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_multi_type"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="MultiType"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tv_web_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="WebView"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/text_input_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <EditText
+                android:id="@+id/edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#66008800"
+                android:hint="请输入内容..."
+                android:padding="10dp" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确认"
+            android:textColor="#88000000" />
+    </LinearLayout>
+
+    <com.a26c.android.frame.widget.BaseRecyclerView
+        android:id="@+id/base_recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+
+    </com.a26c.android.frame.widget.BaseRecyclerView>
+</LinearLayout>

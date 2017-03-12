@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_content1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.lotte.mydemo2.ui.content1.Content1Activity">
+
+    <include
+        android:id="@+id/tool_bar_layout"
+        layout="@layout/arad_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tool_bar_layout"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_press"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="press" />
+
+        <Button
+            android:id="@+id/btn_recyclerviw"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/btn_press"
+            android:text="recyclerviw" />
+    </LinearLayout>
+</RelativeLayout>

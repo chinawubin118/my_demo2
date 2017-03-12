@@ -1,0 +1,181 @@
+<head>
+    <meta charset="utf-8">
+    <title>Html5_2</title>
+    <style type="text/css">
+			#div_imgs {
+				background: #FFF;
+				overflow: hidden;
+				border: 1px dashed #CCC;
+				width: 260px;
+			}
+
+			#div_imgs img {
+				border: 3px solid #F2F2F2;
+			}
+
+			#inner_div {
+				float: left;
+				width: 800%;
+			}
+
+			#div_1 {
+				float: left;
+			}
+
+			#div_2 {
+				float: left;
+			}
+		</style>
+    <script>
+			window.onload = function() {
+
+			    var aTag = document.getElementsByTagName('a')[1];
+                    aTag.addEventListener('click', function() {
+                    androidObj.finishByJs(); //调用android方法:finish()
+                    return false;
+                }, false);
+
+				var et_content = document.getElementById("et_content");
+				var btn_add = document.getElementById("btn_add");
+				var btn_stop = document.getElementById("btn_stop"); //停止
+				var btn_start = document.getElementById("btn_start"); //继续
+				var btn_left = document.getElementById("btn_left"); //向左
+				var btn_right = document.getElementById("btn_right"); //向右
+				var is_timer_running = false; //定时器是否正在运行
+				var timer = null;
+				var ul_1 = document.getElementById("ul_1");
+				var div_imgs = document.getElementById("div_imgs");
+				var inner_div = document.getElementById("inner_div");
+				var div_1 = document.getElementById("div_1");
+				var div_2 = document.getElementById("div_2");
+				var direction = 1; //控制方向(1左,2右)
+				//********************************************************//
+				div_2.innerHTML = div_1.innerHTML;
+				btn_add.onclick = function() {
+						if (et_content.value == "") {
+							alert("请输入内容");
+						} else {
+							var newLi = document.createElement('li');
+							newLi.innerHTML = et_content.value; //给新的li赋值
+							newLi.style.listStyle = 'none';
+							var lis = ul_1.children;
+							if (lis.length > 0) {
+								ul_1.insertBefore(newLi, lis[0]);
+							} else {
+								ul_1.appendChild(newLi);
+							}
+							et_content.value = "";
+						}
+					}
+					//轮播
+				runTimer();
+
+				function Marquee() {
+					if (direction == 1) { //向左移动
+						if (div_2.offsetWidth - div_imgs.scrollLeft <= 0)
+							div_imgs.scrollLeft -= div_1.offsetWidth;
+						else {
+							div_imgs.scrollLeft++;
+						}
+					} else { //向右移动
+						if (div_imgs.scrollLeft == 0) {
+//							alert(div_imgs.scrollLeft);
+							div_imgs.scrollLeft = div_1.offsetWidth;
+						} else {
+							div_imgs.scrollLeft--;
+						}
+					}
+				}
+
+				function runTimer() {
+					if (!is_timer_running) {
+						is_timer_running = true;
+						timer = setInterval(Marquee, 20);
+					}
+				}
+				btn_stop.onclick = function() { //点击停止
+					if (is_timer_running) {
+						is_timer_running = false;
+						clearInterval(timer);
+					}
+				}
+				btn_start.onclick = function() { //点击继续
+					runTimer();
+				}
+			    btn_left.onclick = function() { //向左
+					direction = 1;
+				}
+				btn_right.onclick = function() { //向右
+					direction = 2;
+				}
+
+				//点击图片
+				function setImgOnclick(imgs) {
+					for (var j = 0; j < imgs.length; j++) {
+						imgs[j].index = j;
+						imgs[j].onclick = function() {
+						    <!--androidObj.show_a_toast_by_js("点击了第" + (this.index + 1) + "张图");-->
+						    <!--androidObj.show_a_toast_by_js(this.src);-->
+						    androidObj.getImgName(this.index);
+						}
+					}
+				}
+
+				var imgs_1 = div_1.getElementsByTagName("img");
+				var imgs_2 = div_2.getElementsByTagName("img");
+				setImgOnclick(imgs_1);
+				setImgOnclick(imgs_2);
+			}
+		</script>
+</head>
+
+<body>
+<div>
+    <a href="test_1.html" style="text-decoration: none;">&lt&lt返回上页</a>
+    <a style="margin-left: 10px;">点击finish页面...</a>
+</div>
+
+<div style="margin-top: 10px;">
+    <input type="text" placeholder="请输入评论内容" id="et_content" />
+    <input type="button" value="评论" id="btn_add" />
+</div>
+
+<div>
+    <ul id="ul_1">
+        置顶:111
+    </ul>
+</div>
+
+<div id="div_imgs">
+
+    <div id="inner_div">
+        <div id="div_1">
+            <a href="javascript:;"><img src="img/1.png" style="height: 80px;width: 80px;position: relative;" /></a>
+            <a href="javascript:;"><img src="img/2.png" style="height: 80px;width: 80px;position: relative;" /></a>
+            <a href="javascript:;"><img src="img/3.png" style="height: 80px;width: 80px;position: relative;" /></a>
+            <a href="javascript:;"><img src="img/4.png" style="height: 80px;width: 80px;position: relative;" /></a>
+        </div>
+        <div id="div_2">
+
+        </div>
+    </div>
+</div>
+
+<div style="margin-top: 10px;">
+    <input type="button" value="停止" id="btn_stop" />
+    <input type="button" value="继续" id="btn_start" />
+    <input type="button" value="向左" id="btn_left" />
+    <input type="button" value="向右" id="btn_right" />
+</div>
+
+<div style="margin-top: 15px;">
+    <a href="test_3.html " style="text-decoration:none; ">跳转到Html5_3&gt;&gt;</a>
+</div>
+</body>
+
+
+<!--var aTag = document.getElementsByTagName('a')[1];-->
+<!--aTag.addEventListener('click', function() {-->
+<!--androidObj.finishByJs(); //调用android方法:finish()-->
+<!--return false;-->
+<!--}, false);-->
