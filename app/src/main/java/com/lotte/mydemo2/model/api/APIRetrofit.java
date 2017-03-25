@@ -26,7 +26,8 @@ public class APIRetrofit {
                     .build();
 
             SERVICE = new Retrofit.Builder()
-                    .baseUrl(Constant.RETROFIT_URL)
+//                    .baseUrl(Constant.RETROFIT_URL)
+                    .baseUrl(Constant.MY_SERVER)
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                     .client(client)

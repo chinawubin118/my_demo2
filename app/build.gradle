@@ -32,19 +32,10 @@ dependencies {
     //arad
     //    compile 'com.beanu:arad:0.9.5'
     compile project(':arad')
-    compile 'com.android.support:appcompat-v7:25.1.1'
-    compile 'com.android.support:support-v4:25.1.1'
-    compile 'com.android.support:design:25.1.1'
-    testCompile 'junit:junit:4.12'
     //    compile 'com.jakewharton:butterknife:6.0.0'
-    compile 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     //Android-Ultra-Pull-To-Refresh
-    compile 'in.srain.cube:ultra-ptr:1.0.11'
     //floatingactionbutton...FloatingActionsMenu
-    compile 'com.getbase:floatingactionbutton:1.5.1'
     //baseRecyclerView
-    compile 'com.github.gg051202:android-frame:v0.2'
     //multitype 多类型Item
     compile('me.drakeet.multitype:multitype:2.4.0', {
         exclude group: 'com.android.support'
@@ -55,4 +46,14 @@ dependencies {
     //        exclude group: 'com.android.support', module: 'support-annotations'
     //    }
     compile project(':photoview_lib')
+    compile 'com.android.support:appcompat-v7:25.1.1'
+    compile 'com.android.support:support-v4:25.1.1'
+    compile 'com.android.support:design:25.1.1'
+    compile 'com.jakewharton:butterknife:8.4.0'
+    compile 'in.srain.cube:ultra-ptr:1.0.11'
+    compile 'com.getbase:floatingactionbutton:1.5.1'
+    compile 'com.github.gg051202:android-frame:v0.2'
+    compile 'com.android.support.constraint:constraint-layout:1.0.1'
+    testCompile 'junit:junit:4.12'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
 }

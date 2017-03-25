@@ -11,6 +11,14 @@
         layout="@layout/arad_toolbar" />
 
     <TextView
+        android:id="@+id/tv_test_server"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="测试服务器"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/tv_test"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

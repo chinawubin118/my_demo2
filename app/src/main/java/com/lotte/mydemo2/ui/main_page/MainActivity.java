@@ -26,6 +26,7 @@ import com.lotte.mydemo2.ui.content1.Content1Activity;
 import com.lotte.mydemo2.ui.coordinator.CoordinatorActivity;
 import com.lotte.mydemo2.ui.coordinator.FloatingActionButtonActivity;
 import com.lotte.mydemo2.ui.multi_type.MultiTypeListActivity;
+import com.lotte.mydemo2.ui.test_server.TestServerActivity;
 import com.lotte.mydemo2.ui.webview.WebViewActivity;
 
 import org.greenrobot.eventbus.Subscribe;
@@ -54,6 +55,8 @@ public class MainActivity extends ToolBarActivity<MainPagePresenterImpl, MainPag
     Button btnConfirm;
     @BindView(R.id.base_recyclerView)
     BaseRecyclerView baseRecyclerView;
+    @BindView(R.id.tv_test_server)
+    TextView tvTestServer;//测试服务器
 
     private TextView mTvTest;
 
@@ -68,20 +71,24 @@ public class MainActivity extends ToolBarActivity<MainPagePresenterImpl, MainPag
 
         mTvTest = (TextView) findViewById(R.id.tv_test);
 
+        setListeners();//注册监听
+
+        schoolList = new ArrayList<>();
+        testAdapter = new TestAdapter(this, schoolList);
+
+        Arad.bus.register(this);
+    }
+
+    private void setListeners() {
         mTvTest.setOnClickListener(this);
         tvShortcut.setOnClickListener(this);
         tvShortcut2.setOnClickListener(this);
         tv_multi_type.setOnClickListener(this);
         tv_web_view.setOnClickListener(this);
         btnConfirm.setOnClickListener(this);
+        tvTestServer.setOnClickListener(this);
 
         editText.addTextChangedListener(this);
-
-
-        schoolList = new ArrayList<>();
-        testAdapter = new TestAdapter(this, schoolList);
-
-        Arad.bus.register(this);
     }
 
     @Subscribe(threadMode = ThreadMode.MAIN)
@@ -120,6 +127,10 @@ public class MainActivity extends ToolBarActivity<MainPagePresenterImpl, MainPag
         }
         if (v == tv_web_view) {
             Intent intent = new Intent(this, WebViewActivity.class);
+            startActivity(intent);
+        }
+        if (v == tvTestServer) {
+            Intent intent = new Intent(this, TestServerActivity.class);
             startActivity(intent);
         }
     }

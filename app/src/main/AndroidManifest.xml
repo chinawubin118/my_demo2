@@ -26,8 +26,9 @@
         <activity android:name=".ui.multi_type.MultiTypeListActivity" />
         <activity android:name=".ui.webview.WebViewActivity" />
         <activity android:name=".ui.test_1.Test_1_1Activity" />
-        <activity android:name=".ui.test_1.Test_1_2Activity"/>
-        <activity android:name=".util.PhotoCheckActivity"/>
+        <activity android:name=".ui.test_1.Test_1_2Activity" />
+        <activity android:name=".util.PhotoCheckActivity" />
+        <activity android:name=".ui.test_server.TestServerActivity"></activity>
     </application>
 
 </manifest>

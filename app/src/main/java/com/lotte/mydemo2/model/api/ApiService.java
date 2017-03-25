@@ -58,17 +58,6 @@ public interface ApiService {
     Observable<BaseModel<SmsCode>> requestCode(@Field("phoneNum") String phoneNum, @Field("type") String type);
 
     /**
-     * 获取学校列表
-     *
-     * @param provinceName 省份名称
-     * @param schoolName   查询名称
-     * @return
-     */
-    @FormUrlEncoded
-    @POST("phoneMobile.do?act=getSchoolList")
-    Observable<BaseModel<List<School>>> getSchoolList(@Field("provinceName") String provinceName, @Field("schoolName") String schoolName);
-
-    /**
      * 说说列表
      */
     @FormUrlEncoded
@@ -90,6 +79,24 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("phoneMobile.do?act=updateInLike")
     Observable<JsonObject> likeShuoshuo(@Field("userId") String userId, @Field("id") String objId);
+
+    /**
+     * 获取学校列表
+     *
+     * @param provinceName 省份名称
+     * @param schoolName   查询名称
+     * @return
+     */
+    @FormUrlEncoded
+    @POST("phoneMobile.do?act=getSchoolList")
+    Observable<BaseModel<List<School>>> getSchoolList(@Field("provinceName") String provinceName, @Field("schoolName") String schoolName);
+
+    /**
+     * 测试登录
+     */
+    @FormUrlEncoded
+    @POST("demo1/servlet/LoginServlet")
+    Observable<JsonObject> loginToMyServer(@Field("username") String username, @Field("password") String password);
 }
 
 
