@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="floatingactionbutton-1.5.1">
     <CLASSES>
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.5.1/res" />
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.getbase/floatingactionbutton/1.5.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.android/build-cache/74c85a5da4ce7ddc09fe146316a789bec270dc48/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/74c85a5da4ce7ddc09fe146316a789bec270dc48/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

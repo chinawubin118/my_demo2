@@ -1,1 +1,1 @@
-include ':app', ':arad', ':photoview_lib'
+include ':app', ':arad', ':photoview_lib', ':getmacdemo'

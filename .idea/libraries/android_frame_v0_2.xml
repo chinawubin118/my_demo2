@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="android-frame-v0.2">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.gg051202/android-frame/v0.2/jars/classes.jar!/" />
-      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.gg051202/android-frame/v0.2/res" />
+      <root url="file://$USER_HOME$/.android/build-cache/afa99f5f75a4c56eb709ba2e498e3d5b8748286d/output/res" />
+      <root url="jar://$USER_HOME$/.android/build-cache/afa99f5f75a4c56eb709ba2e498e3d5b8748286d/output/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

@@ -5,6 +5,7 @@ import com.google.gson.JsonObject;
 import com.lotte.mydemo2.model.bean.Playground;
 import com.lotte.mydemo2.model.bean.School;
 import com.lotte.mydemo2.model.bean.SmsCode;
+import com.lotte.mydemo2.model.bean.TestServerBean;
 
 import java.util.List;
 
@@ -97,6 +98,13 @@ public interface ApiService {
     @FormUrlEncoded
     @POST("demo1/servlet/LoginServlet")
     Observable<JsonObject> loginToMyServer(@Field("username") String username, @Field("password") String password);
+
+    /**
+     * 测试登录2
+     */
+    @FormUrlEncoded
+    @POST("demo1/servlet/LoginServlet")
+    Observable<TestServerBean> loginToMyServer2(@Field("username") String username, @Field("password") String password);
 }
 
 
